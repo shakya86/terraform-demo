@@ -40,7 +40,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-
+      - name: Debug Files
+        run: |
+         pwd
+         echo "===== Repository Structure ====="
+         find .
+         echo "===== Environment Folder ====="
+         ls -la environment
+         ls -la environment/dev
+      
       - name: Terraform Validate
         run: terraform validate
 
